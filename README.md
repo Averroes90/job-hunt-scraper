@@ -1,99 +1,75 @@
 # **Job Application Customizer**
+A Python-based tool for automating the job application process by analyzing job descriptions (via URL or text input), dynamically generating tailored responses using pre-provided personal documents, and preparing high-quality application materials.
 
-## **Overview**
-The Job Application Customizer is a program designed to streamline and enhance your job application process. By leveraging your personal packet of documents (e.g., resumes, cover letters, personal essays), it dynamically generates tailored responses for job applications based on the content of the application text or URL.
-
-### **Features**
-1. **Custom Response Generation:**
-   - Provide a job application via a URL or pasted text.
-   - Automatically extract relevant details (e.g., required skills, responsibilities).
-   - Use your personal document packet to generate customized resumes, cover letters, and application responses.
-
-2. **Dynamic Document Matching:**
-   - Identify the most relevant parts of your packet for a given job.
-   - Rephrase and align content to the application requirements.
-
-3. **Future Integration:**
-   - Automate the entire job application process, including job discovery, submission, and tracking.
+## 🚧 **Project Status: In Progress** 🚧
+This project is currently under development. The focus has shifted to prioritize modules that take a job application (via URL or pasted text) and generate highly customized resumes, cover letters, and responses, making the tool immediately useful.
 
 ---
 
-### **Modules**
-The program is being developed in modular phases to ensure early usability:
+## **Features (Planned and In Progress)**
 
-1. **Job Analysis Module (Current Priority):**
-   - Extract and analyze job requirements from a URL or pasted text.
-   - Identify key skills and responsibilities.
+### ✅ **Phase 1: Job Analysis and Customization (Current Priority)**
+- Input job applications via URL or pasted text.
+- Extract key details like required skills, responsibilities, and keywords.
+- Generate customized resumes, cover letters, and responses using pre-provided templates.
 
-2. **Document Customization Module:**
-   - Use pre-provided resumes, essays, and cover letters to generate responses tailored to the job.
+### 🛠️ **Phase 2: Document Customization**
+- Dynamically match user-provided documents to job requirements.
+- Rephrase and tailor content for maximum relevance.
 
-3. **Application Submission Module (Future Work):**
-   - Automate filling out and submitting applications on various job boards and company websites.
+### 🛠️ **Phase 3: Automated Application Submission**
+- Automate the filling out and submission of applications on job boards and company websites.
+- Handle uploads, form submissions, and confirmations.
 
-4. **Job Discovery Module (Future Work):**
-   - Scrape major job boards and company career sections to identify matching roles.
+### 🛠️ **Phase 4: Job Discovery**
+- Scrape major job boards and company career sections to identify relevant roles.
+- Dynamically detect career sections on company websites.
 
----
-
-### **How It Works**
-1. **Input:**
-   - A job application (via URL or pasted text).
-   - Your pre-provided packet of personal documents.
-
-2. **Process:**
-   - Analyze the job application to extract skills, responsibilities, and keywords.
-   - Dynamically generate customized application materials.
-
-3. **Output:**
-   - A set of tailored documents ready for submission.
+### 🛠️ **Phase 5: Scheduling and Automation**
+- Automate periodic analysis of job applications and responses.
+- Schedule recurring tasks like job discovery and document customization.
 
 ---
 
-### **Setup**
-#### **Environment Setup**
-1. Clone the repository:
+## **Getting Started**
+
+### **Prerequisites**
+1. **Install Python 3.10+** on your system.
+2. **Set up a virtual environment** (recommended).
+3. **Install required libraries:**
    ```bash
-   git clone https://github.com/your-repo/job-application-customizer.git
+   pip install playwright beautifulsoup4 requests sqlite3 spacy jinja2
+   playwright install
+   python -m spacy download en_core_web_sm
+   ```
+
+---
+
+### **Running the Project**
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/job-application-customizer.git
    cd job-application-customizer
    ```
 
-2. Set up a Python virtual environment:
+2. Activate your virtual environment:
+   - **macOS/Linux:**
+     ```bash
+     source venv/bin/activate
+     ```
+   - **Windows:**
+     ```cmd
+     venv\Scripts\activate
+     ```
+
+3. Run the test script:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   python main.py
    ```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ---
 
-### **Usage**
-#### **Step 1: Provide Your Personal Packet**
-Place your resumes, essays, and cover letters in the `data/personal_documents/` folder.
-
-#### **Step 2: Input Job Application**
-Run the script and provide a job application URL or paste the job description text directly.
-
-#### **Step 3: Generate Customized Documents**
-The program will generate:
-- A tailored resume.
-- A tailored cover letter.
-- Answers to any application questions (if applicable).
-
----
-
-### **Future Enhancements**
-- **Automation:** Automatically submit applications to identified roles.
-- **Discovery:** Scrape job boards for matching applications.
-- **Tracking:** Track submitted applications and provide analytics.
-
----
-
-### **Directory Structure**
+## **Directory Structure**
 ```
 job-application-customizer/
 │
@@ -106,7 +82,37 @@ job-application-customizer/
 │   ├── document_customizer.py # Generate tailored documents
 │   ├── utils.py              # Helper functions
 │
-├── main.py                   # Entry point for running the program
+├── notebooks/                # Interactive testing
+│   ├── test_job_analysis.ipynb  # For testing job analysis functionality
+│
 ├── requirements.txt          # Dependencies
-└── README.md                 # Documentation
+└── main.py                   # Entry point for running the program
 ```
+
+---
+
+## **Roadmap**
+- [x] Set up environment and basic file structure.
+- [x] Define the project scope and updated priorities.
+- [ ] Develop **Job Analysis Module** to process job descriptions.
+- [ ] Build **Document Customization Module** to generate tailored responses.
+- [ ] Integrate submission automation for streamlined applications.
+- [ ] Add job discovery and tracking capabilities.
+
+---
+
+## **Contributions**
+This project is a personal endeavor, and external contributions are not currently being accepted. Feel free to fork the repository if you'd like to experiment or build on it.
+
+---
+
+## **License**
+This project is under the [MIT License](LICENSE).
+
+---
+
+## **Acknowledgments**
+- [Playwright](https://playwright.dev/) for browser automation.
+- [spaCy](https://spacy.io/) for natural language processing.
+- [Jinja2](https://jinja.palletsprojects.com/) for dynamic document templates.
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) for HTML parsing.
