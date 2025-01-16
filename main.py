@@ -1,9 +1,7 @@
-from playwright.sync_api import sync_playwright
+import spacy
 
 if __name__ == "__main__":
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto("https://example.com")
-        print("Page title:", page.title())
-        browser.close()
+    nlp = spacy.load("en_core_web_sm")
+    doc = nlp("The Job Application Customizer is working!")
+    for token in doc:
+        print(f"{token.text} -> {token.pos_}")
